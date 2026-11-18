@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Page</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--bs-dark) !important;
+            transition: color 0.3s ease;
+        }
+
+        .navbar-nav .nav-link.active {
+            color: var(--bs-primary) !important;
+            font-weight: 500;
+        }
+    </style>
+</head>
+<!-- Scrollspy: вмикаємо, вказуємо navbar і відступ зверху -->
+<body data-bs-spy="scroll" data-bs-target="#mainNavbar" data-bs-offset="80" tabindex="0">
+
+    <!-- Навігаційна панель: адаптивна, світла, закріплена зверху, з тінню -->
+    <nav id="mainNavbar" class="navbar navbar-expand-lg navbar-light bg-white sticky-top shadow-sm">
+        <div class="container">
+
+            <a class="navbar-brand fw-bold text-primary" href="#home">VinTour</a>
+
+            <!-- Кнопка відкриття offcanvas на мобільних -->
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar" aria-label="Відкрити меню">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Offcanvas-меню -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar"
+                 aria-labelledby="offcanvasNavbarLabel" data-bs-scroll="true" data-bs-backdrop="true">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="offcanvasNavbarLabel">Меню</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Закрити"></button>
+                </div>
+                <div class="offcanvas-body">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item"><a class="nav-link active" href="#home">Головна</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#tours">Тури</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#guides">Гіди</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact">Контакти</a></li>
+                        <!-- Випадаюче меню -->
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                Напрямки
+                            </a>
+                            <ul class="dropdown-menu">
+                                <li><a class="dropdown-item" href="#">Вінниця</a></li>
+                                <li><a class="dropdown-item" href="#">Кам’янець-Подільський</a></li>
+                                <li><hr class="dropdown-divider"></li>
+                                <li><a class="dropdown-item" href="#">Усі маршрути</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <!-- Форма пошуку -->
+                    <form class="d-flex align-items-center gap-2" role="search">
+                        <input class="form-control rounded-pill" type="search" placeholder="Пошук туру" aria-label="Пошук">
+                        <button class="btn btn-outline-primary rounded-pill px-3" type="submit">Знайти</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Секції сторінки (id збігаються з href у меню) -->
+    <section id="home" class="bg-white py-5 min-vh-100 d-flex align-items-center">
+        <div class="container">
+            <div class="bg-light rounded-4 p-5 text-center">
+                <h2 class="fw-bold py-5 my-5">Головна: подорожі Поділлям</h2>
+            </div>
+        </div>
+    </section>
+
+    <section id="tours" class="bg-primary-subtle py-5 min-vh-100 d-flex align-items-center">
+        <div class="container">
+            <div class="bg-light rounded-4 p-5 text-center">
+                <h2 class="fw-bold py-5 my-5">Тури вихідного дня</h2>
+            </div>
+        </div>
+    </section>
+
+    <section id="guides" class="bg-white py-5 min-vh-100 d-flex align-items-center">
+        <div class="container">
+            <div class="bg-light rounded-4 p-5 text-center">
+                <h2 class="fw-bold py-5 my-5">Наші гіди</h2>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="bg-primary-subtle py-5 min-vh-100 d-flex align-items-center">
+        <div class="container">
+            <div class="bg-light rounded-4 p-5 text-center">
+                <h2 class="fw-bold py-5 my-5">Контакти</h2>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
+</body>
+</html>
